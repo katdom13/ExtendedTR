@@ -1,0 +1,8 @@
+DIRECTIONS = ["NORTH", "SOUTH", "EAST", "WEST"]
+DIR_STATE = {
+    "NORTH": {"LEFT": "WEST", "RIGHT": "EAST"},
+    "WEST": {"LEFT": "SOUTH", "RIGHT": "NORTH"},
+    "SOUTH": {"LEFT": "EAST", "RIGHT": "WEST"},
+    "EAST": {"LEFT": "NORTH", "RIGHT": "SOUTH"},
+}
+COMMANDS = ["MOVE", "LEFT", "RIGHT", "REPORT", "PLACE"]

@@ -6,7 +6,7 @@ def has_table(f):
     def wrapper(self, *args, **kwargs):
         if not self.table:
             return
-        f(self, *args, **kwargs)
+        return f(self, *args, **kwargs)
 
     return wrapper
 
@@ -31,3 +31,11 @@ class Table(object):
     def place(self, obj, x, y):
         self.table[x][y] = obj
         return obj
+
+    @has_table
+    def get(self, x, y):
+        return self.table[x][y]
+
+    @has_table
+    def has_content(self, x, y):
+        return bool(self.get(x, y))

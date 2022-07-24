@@ -12,3 +12,11 @@ class InvalidCommand(Exception):
     """
 
     pass
+
+
+class CollisionError(Exception):
+    """
+    Raised when there is a collision on the table
+    """
+
+    pass

@@ -34,24 +34,24 @@ python main.py <filename>
 
 ### Make the table size configurable
 
-### Command:
+#### Command:
 ```
 TABLE <columns>x<rows>
 ```
 
-### Caveats
+#### Caveats
 - This should be in either the first or second line of the file input
 - If not, this command will be ignored and the table size will be set to 5x5
 
 
 ### Add 2 (or n) robots on the table
 
-### Command:
+#### Command:
 ```
 ROBOTS <num>
 ```
 
-### Caveats
+#### Caveats
 - This should be in either the first or second line of the file input
 - If not, this command will be ignored and the robot number is set to 1 by default
 - The commands "MOVE", "LEFT", "RIGHT", and "REPORT" will require and id
@@ -83,10 +83,10 @@ The result is
 
 Why?
 
-The first place command is for robot 1 (PLACE 1,2,NORTH)
-The second place command is for robot 2 (PLACE 1,3,NORTH)
-The third place command is for robot 1 again, but this fails due to collision with robot 2 and is ignored. (PLACE 1,3,NORTH)
-The fourth place command is still for robot 1 because the place command prior failed. (PLACE 1,4,NORTH)
-Since the fourth place command did not fail, the next one is for robot 2, but this one is ignored due to failing and robot 2 retains its position. (PLACE 1,4,NORTH)
+1.  first place command is for robot 1 (PLACE 1,2,NORTH)
+2.  second place command is for robot 2 (PLACE 1,3,NORTH)
+3.  third place command is for robot 1 again, but this fails due to collision with robot 2 and is ignored. (PLACE 1,3,NORTH)
+4. fourth place command is still for robot 1 because the place command prior failed. (PLACE 1,4,NORTH)
+5. ce the fourth place command did not fail, the next one is for robot 2, but this one is ignored due to failing and robot 2 retains its position. (PLACE 1,4,NORTH)
 
 So the place commands alternate between the multiple robots, but stays with a robot if it fails.
